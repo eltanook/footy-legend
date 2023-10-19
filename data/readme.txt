@@ -1,0 +1,1 @@
+aca tendria las bases de datos asi laburamos con archivos locales y las podemos cambiar en mercados de pases y cuando se creen jugadores nuevos

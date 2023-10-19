@@ -1,0 +1,1 @@
+todas las imagenes q usemos aca (juagdores, fondo, animaciones incluso)

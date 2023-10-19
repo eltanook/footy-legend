@@ -1,0 +1,65 @@
+class Jugador:
+    def __init__(self, nombre, valor, habilidad, club):
+        self.nombre = nombre
+        self.valor = valor
+        self.habilidad = habilidad
+        self.salud = 100
+        self.felicidad = 100
+        self.edad = 16
+        self.club = club
+
+jugadores_disponibles = [
+    Jugador("Cristiano Ronaldo", 100000000, 90, "Al Nassr"),
+    Jugador("Lionel Messi", 95000000, 92, "Inter Miami"),
+    Jugador("Neymar", 90000000, 88, "Al hilal"),
+    Jugador("Kylian Mbappé", 90000000, 87, "Paris SAint Germain"),
+    Jugador("Mohamed Salah", 90000000, 87, "Liverpool"),
+    Jugador("Sadio Mané", 90000000, 87, "Liverpool"),
+    Jugador("Kevin De Bruyne", 90000000, 87, "Manchester City"),
+    Jugador("Robert Lewandowski", 90000000, 87, "Bayern Munich"),
+    Jugador("Virgil van Dijk", 90000000, 87, "Liverpool"),
+    Jugador("Jan Oblak", 90000000, 87, "Atlético de Madrid"),
+    Jugador("Sergio Ramos", 90000000, 87, "Real Madrid"),
+    Jugador("Luka Modric", 90000000, 87, "Real Madrid"),
+    Jugador("Harry Kane", 90000000, 87, "Tottenham Hotspur"),
+    Jugador("Paul Pogba", 90000000, 87, "Manchester United"),
+    Jugador("Antoine Griezmann", 90000000, 87, "Barcelona"),
+    Jugador("Eden Hazard", 90000000, 87, "Real Madrid"),
+    Jugador("Raheem Sterling", 90000000, 87, "Manchester City"),
+    Jugador("Ederson", 90000000, 87, "Manchester City"),
+    Jugador("Toni Kroos", 90000000, 87, "Real Madrid"),
+    Jugador("Marc-André ter Stegen", 90000000, 87, "Barcelona"),
+    Jugador("Alisson", 90000000, 87, "Liverpool"),
+    Jugador("Roberto Firmino", 90000000, 87, "Liverpool"),
+    Jugador("Bruno Fernandes", 90000000, 87, "Manchester United"),
+    Jugador("Bernardo Silva", 90000000, 87, "Manchester City"),
+    Jugador("Aymeric Laporte", 90000000, 87, "Manchester City"),
+    Jugador("Jadon Sancho", 90000000, 87, "Borussia Dortmund"),
+    Jugador("Trent Alexander-Arnold", 90000000, 87, "Liverpool"),
+    Jugador("Marcos Llorente", 90000000, 87, "Atlético de Madrid"),
+    Jugador("Marcus Rashford", 90000000, 87, "Manchester United"),
+    Jugador("Heung-min Son", 90000000, 87, "Tottenham Hotspur"),
+    Jugador("Roberto Firmino", 90000000, 87, "Liverpool"),
+    Jugador("Frenkie de Jong", 90000000, 87, "Barcelona"),
+    Jugador("Andrew Robertson", 90000000, 87, "Liverpool"),
+    Jugador("Fabinho", 90000000, 87, "Liverpool"),
+    Jugador("Lautaro Martínez", 90000000, 87, "Inter de Milán"),
+    Jugador("N'Golo Kanté", 90000000, 87, "Chelsea"),
+    Jugador("Wojciech Szczęsny", 90000000, 87, "Juventus"),
+    Jugador("Gerard Piqué", 90000000, 87, "Barcelona"),
+    Jugador("David de Gea", 90000000, 87, "Manchester United"),
+    Jugador("Joshua Kimmich", 90000000, 87, "Bayern Munich"),
+    Jugador("Sergio Agüero", 90000000, 87, "Manchester City"),
+    Jugador("Jordan Henderson", 90000000, 87, "Liverpool"),
+    Jugador("Timo Werner", 90000000, 87, "Chelsea"),
+    Jugador("Pierre-Emerick Aubameyang", 90000000, 87, "Arsenal"),
+    Jugador("Casemiro", 90000000, 87, "Real Madrid"),
+    Jugador("Thomas Müller", 90000000, 87, "Bayern Munich"),
+    Jugador("Thiago Alcántara", 90000000, 87, "Bayern Munich"),
+    Jugador("Karim Benzema", 90000000, 87, "Real Madrid"),
+    Jugador("Luis Suárez", 90000000, 87, "Atlético de Madrid"),
+    Jugador("Jamie Vardy", 90000000, 87, "Leicester City"),
+    Jugador("David Silva", 90000000, 87, "Real Sociedad"),
+    Jugador("Keylor Navas", 90000000, 87, "Paris Saint Germain"),
+    Jugador("Marquinhos", 90000000, 87, "Paris Saint Germain"),
+]

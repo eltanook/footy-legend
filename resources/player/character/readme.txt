@@ -1,0 +1,1 @@
+que aca almacene el personaje personalizado del jugador (cara, peinado, ropa?, etc)
