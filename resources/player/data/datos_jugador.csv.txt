@@ -1,0 +1,23 @@
+nombre,
+stamina,115
+felicidad,100
+edad,16
+club,Tu Club
+valor,0
+dinero,0
+cant_articulos,0
+popularidad,0
+fuerza,0
+velocidad,0
+resistencia,0
+tecnica,0
+vision,0
+inteligencia tactica,0
+defensa,0
+toma decisiones,0
+teamwork,0
+caracter,0
+resistencia lesiones,0
+mentalidad,0
+fisico,0
+liderazgo,0
