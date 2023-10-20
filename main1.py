@@ -352,7 +352,7 @@ while running:
             ("Personalizar Personaje", screen_width // 2, 480),  # Nueva opción
             ("Salir", screen_width // 2, 540),
         ]
-
+ 
         y = 400
         for button_text, x_button, y_button in menu_buttons:
             draw_button(button_text, x_button, y_button + scroll_y)
@@ -404,7 +404,7 @@ while running:
                         elif button_text == "Estilo de Vida":
                             gestionar_estilo_de_vida(jugadores_disponibles[-1])
                         elif button_text == "Entrenamiento":
-                            entrenamiento(jugadores_disponibles[-1])  # ¿Qué es esto?
+                            entrenamiento(jugadores_disponibles[-1])
                         elif button_text == "Simular Partido":
                             simular_partido_en_tiempo_real(jugadores_disponibles[-1])
                         elif button_text == "Personalizar Personaje":

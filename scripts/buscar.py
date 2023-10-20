@@ -28,7 +28,7 @@ class Buscar(object):
         self.rival = ''
         # self.club = 'Manchester City'
         
-    def datos_jugador(self, archivo='ruta_archivo_player'):
+    def datos_jugador(self, archivo='resources\player\data\datos_jugador.csv'):
             '''recopila los datos del jugador relevantes para el partido (stamina, felicidad, habilidades) para que influyan en el juego
             archivo (diria que un csv xq es lo que se manejar) es un nombre placeholder, 
                 debería buscar siempre el mismo (a no ser que queramos que se puedan guardar varios jugadores)
@@ -63,12 +63,14 @@ class Buscar(object):
                     self.mentalidad = int(i['mentalidad'])
                     self.fisico = int(i['fisico'])
                     self.liderazgo = int(i['liderazgo'])
+            return lista
 
     def media_jugador(self):
         attribute_list = [int(self.fuerza), int(self.velocidad), int(self.resistencia), int(self.tecnica), int(self.vision), 
                                 int(self.int_tactica), int(self.defensa), int(self.toma_decisiones), int(self.teamwork), int(self.caracter), 
                                 int(self.resistencia_lesiones), int(self.mentalidad), int(self.fisico), int(self.liderazgo)]       
         self.media = round(np.mean(attribute_list))
+        return round(np.mean(attribute_list))
 
     def traer_equipos_archivo(self, archivo='..\data\Football teams.csv'):
         '''hace una lista de diccionarios de todos los equipos del archivo parecida a:
