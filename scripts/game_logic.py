@@ -39,7 +39,7 @@ class Objetos(object):
                     pygame.quit()
                     sys.exit()
 
-            Screen().fondo()
+            self.screen
             #screen.blit(self.fondo_cancha, (0, 0))
 
             Buttons().draw_button(f"Nombre: {self.name}", self.screen_width // 2, 150)
@@ -58,7 +58,7 @@ class Objetos(object):
                     x, y = pygame.mouse.get_pos()
                     if volver_button.collidepoint(x, y):
                         break   
-    def simular_partido_en_tiempo_real(screen, jugador):
+    def simular_partido_en_tiempo_real(self, jugador):
         color_fondo = (0, 128, 0)
         color_texto = (255, 255, 255)
         
@@ -71,19 +71,19 @@ class Objetos(object):
                     pygame.quit()
                     sys.exit()
 
-            screen.fill(color_fondo)
+            self.screen.fill(color_fondo)
 
             tiempo_transcurrido = time.time() - tiempo_inicial
 
             if tiempo_transcurrido >= 1:
                 evento = random.choice(["Gol", "Tarjeta Amarilla", "Tarjeta Roja", "Cambio"])
-                Buttons().draw_button(screen, f"Evento: {evento}", 200, 300)
+                Buttons().draw_button(self.screen, f"Evento: {evento}", 200, 300)
             if tiempo_transcurrido >= 5:
                 goles_jugador = random.randint(0, 3)
-                Buttons().draw_button(screen, f"Goles: {goles_jugador}", 200, 400)
+                Buttons().draw_button(self.screen, f"Goles: {goles_jugador}", 200, 400)
 
             tiempo_transcurrido = round(tiempo_transcurrido, 2)
-            Buttons().draw_button(screen, f"Tiempo: {tiempo_transcurrido}s", 200, 500)
+            Buttons().draw_button(self.screen, f"Tiempo: {tiempo_transcurrido}s", 200, 500)
             pygame.display.flip()
 
         resultado = random.choice(["Victoria", "Empate", "Derrota"])
@@ -96,19 +96,19 @@ class Objetos(object):
                     pygame.quit()
                     sys.exit()
 
-            screen.fill(color_fondo)
+            self.screen.fill(color_fondo)
 
-            Buttons().draw_button(screen, "Tu Club", 200, 100)
-            Buttons().draw_button(screen, "VS", 200, 200)
+            Buttons().draw_button(self.screen, "Tu Club", 200, 100)
+            Buttons().draw_button(self.screen, "VS", 200, 200)
             club_rival = random.choice(["Club A", "Club B", "Club C"])
-            Buttons().draw_button(screen, club_rival, 200, 300)
+            Buttons().draw_button(self.screen, club_rival, 200, 300)
 
-            Buttons().draw_button(screen, f"Resultado: {resultado}", 200, 400)
-            Buttons().draw_button(screen, f"Goles: {goles_jugador}", 200, 450)
-            Buttons().draw_button(screen, f"Minutos: 90", 200, 500)
-            Buttons().draw_button(screen, f"Calificación: {calificacion_final:.1f}", 200, 550)
+            Buttons().draw_button(self.screen, f"Resultado: {resultado}", 200, 400)
+            Buttons().draw_button(self.screen, f"Goles: {goles_jugador}", 200, 450)
+            Buttons().draw_button(self.screen, f"Minutos: 90", 200, 500)
+            Buttons().draw_button(self.screen, f"Calificación: {calificacion_final:.1f}", 200, 550)
 
-            simular_otro_partido_button = Buttons().draw_button(screen, "Simular otro partido", 200, 600)
+            simular_otro_partido_button = Buttons().draw_button(self.screen, "Simular otro partido", 200, 600)
 
             pygame.display.flip()
 
@@ -134,7 +134,7 @@ class Objetos(object):
                     pygame.quit()
                     sys.exit()
 
-            Screen().fondo()
+            self.screen
             # screen.blit(fondo_cancha, (0, 0))
 
             ejercicio_button = Buttons().draw_button("Hacer ejercicio", self.screen_width // 2, 250)
@@ -181,7 +181,7 @@ class Objetos(object):
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            Screen().fondo()
+            self.screen
             # screen.blit(fondo_cancha, (0, 0))
             part_images = []
             y = 50

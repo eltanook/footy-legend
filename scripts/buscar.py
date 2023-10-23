@@ -3,10 +3,13 @@ import csv
 import numpy as np
 import pygame
 import sys
+from screen import Screen
 #%%
 class Buscar(object):
 
     def __init__(self):
+        pygame.font.init()
+        self.font = pygame.font.Font(None, 36)  #Estas primeras dos lineas hay que tambien traerlas de otro lado
         self.fuerza = 0
         self.velocidad = 0
         self.resistencia = 0
@@ -26,6 +29,7 @@ class Buscar(object):
         self.media = 0
         self.liga = ''
         self.rival = ''
+        self.screen = pygame.display.set_mode((400, 600)) #Cambiar para que use valores traidos de la ejecucion del programa en juego.py
         # self.club = 'Manchester City'
         
     def datos_jugador(self, archivo='resources\player\data\datos_jugador.csv'):
@@ -198,7 +202,8 @@ class Buscar(object):
                         else:
                             nombre += event.unicode
 
-            self.screen.blit(self.fondo_cancha, (0, 0))
+            # self.screen.blit(self.fondo_cancha, (0, 0))
+            Screen().fondo()
 
             txt_surface = self.font.render(nombre, True, color) #aca font con self? creo q si
             width = max(200, txt_surface.get_width() + 10)

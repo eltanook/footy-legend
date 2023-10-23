@@ -11,17 +11,17 @@ class Game():
         self.screen_width = width
         self.screen_height = heigth
         self.scrollable_area = pygame.Rect(0, 0, self.screen_width, self.screen_height)
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height)) #no se bien donde pija meter esta linea
+        # self.screen = pygame.display.set_mode((self.screen_width, self.screen_height)) #no se bien donde pija meter esta linea
         self.screen = Screen().fondo()
         self.jugador = Buscar().datos_jugador()
-        self.money = float(self.jugador['dinero'])
-        self.club = str(self.jugador['club'])
-        self.name = str(self.jugador['nombre'])
-        self.age = int(self.jugador['edad'])
+        self.money = float(self.jugador[0]['dinero'])
+        self.club = str(self.jugador[0]['club'])
+        self.name = str(self.jugador[0]['nombre'])
+        self.age = int(self.jugador[0]['age'])
         self.media = Buscar().media_jugador()
-        self.felicidad = int(self.jugador['felicidad'])
-        self.stamina = int(self.jugador['stamina'])
-        self.value = int(self.jugador['valor'])
+        self.felicidad = int(self.jugador[0]['felicidad'])
+        self.stamina = int(self.jugador[0]['stamina'])
+        self.value = int(self.jugador[0]['valor'])
         self.spacing = 50
 
 
@@ -33,19 +33,19 @@ class Game():
         running = True
         scroll_y = 0
         # jugador_image = jugadores_disponibles[-1].imagen
-        jugador_habilidad = self.jugador['media']
+        jugador_habilidad = self.media
         while running:
             clock.tick(60) # hace que corra a 60fps para consistencia
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
 
-            self.screen
+            # self.screen
             # Screen().fondo()        #esto no estoy seguro de que funcione
             # self.screen.blit(fondo_cancha, (0, 0))
-
-            if not nombre_jugador:
-                nombre_jugador = Buscar().obtener_nombre()
+            nombre_jugador = self.name
+            if nombre_jugador=='Tu Nombre':
+                self.name = Buscar().obtener_nombre()
 
             if nombre_jugador:
                 menu_buttons = [
