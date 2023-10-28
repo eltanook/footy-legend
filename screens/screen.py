@@ -1,5 +1,4 @@
 import pygame
-from data.jugadores import jugadores_disponibles
 from utils.button import draw_button
 from game.game_logic import simular_partido_en_tiempo_real
 import sys
