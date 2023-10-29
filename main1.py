@@ -73,7 +73,8 @@ class Jugador:
         self.club = club
         self.imagen = imagen
         self.lujo = 0
-
+        
+patrocinadores = []
 nombre_jugador = ""
 valor_jugador = 0
 habilidad_jugador = 0
@@ -184,7 +185,103 @@ def obtener_nombre():
 
     return nombre
 
-# Función para gestionar la sección de Lujo
+# Después de aceptar una oferta
+nuevo_patrocinador = "Nombre del patrocinador"  # Reemplaza con el nombre real del patrocinador
+patrocinadores.append(nuevo_patrocinador)
+
+def aceptar_oferta_patrocinio(oferta):
+    patrocinadores.append(oferta)
+
+def menu_de_medios():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        screen.blit(fondo_cancha, (0, 0))
+
+        # Crear un menú de medios con opciones
+        opciones = [
+            ("Redes Sociales", screen_width // 2, 250),
+            ("Medios Tradicionales", screen_width // 2, 310),
+            ("Otra Opción de Medios", screen_width // 2, 370),
+            ("Volver al Menú", screen_width // 2, 430)
+        ]
+
+        for button_text, x_button, y_button in opciones:
+            draw_button(button_text, x_button, y_button)
+
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = pygame.mouse.get_pos()
+                for button_text, x_button, y_button in opciones:
+                    button = pygame.Rect(x_button - 100, y_button - 25, 200, 50)
+                    if button.collidepoint(x, y):
+                        if button_text == "Redes Sociales":
+                            # Implementa la mecánica de redes sociales aquí
+                            print("Accediste a la sección de Redes Sociales.")
+                        elif button_text == "Medios Tradicionales":
+                            # Implementa la mecánica de medios tradicionales aquí
+                            print("Accediste a la sección de Medios Tradicionales.")
+                        elif button_text == "Otra Opción de Medios":
+                            # Agrega otra mecánica de medios aquí
+                            print("Accediste a otra opción de Medios.")
+                        elif button_text == "Volver al Menú":
+                            return
+                        
+def gestionar_medios():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        screen.blit(fondo_cancha, (0, 0))
+
+        # Crea un menú para la sección de "Medios"
+        medios_menu = [
+            ("Redes Sociales", screen_width // 2, 250),
+            ("Medios Tradicionales", screen_width // 2, 320),
+            ("Otra Opción", screen_width // 2, 390),
+            ("Volver al Menú", screen_width // 2, 460)
+        ]
+
+        for button_text, x_button, y_button in medios_menu:
+            draw_button(button_text, x_button, y_button)
+
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = pygame.mouse.get_pos()
+                for button_text, x_button, y_button in medios_menu:
+                    button = pygame.Rect(x_button - 100, y_button - 25, 200, 50)
+                    if button.collidepoint(x, y):
+                        if button_text == "Redes Sociales":
+                            # Implementa la funcionalidad para interactuar con las redes sociales
+                            print("Interactúa con las redes sociales aquí.")
+                        elif button_text == "Medios Tradicionales":
+                            # Implementa la funcionalidad para acceder a los medios tradicionales
+                            print("Accede a los medios tradicionales aquí.")
+                        elif button_text == "Otra Opción":
+                            # Otra opción relacionada con los medios
+                            print("Otra opción relacionada con los medios.")
+                        elif button_text == "Volver al Menú":
+                            return
+                        
+
+
 def gestionar_lujo(jugador):
     while True:
         for event in pygame.event.get():
@@ -615,10 +712,11 @@ while running:
             ("Mi Jugador", screen_width // 2, 180),
             ("Ofertas de Traspaso", screen_width // 2, 240),
             ("Estilo de Vida", screen_width // 2, 300),
-            ("Entrenamiento", screen_width // 2, 360),
-            ("Personalizar Personaje", screen_width // 2, 420),
-            ("Salir", screen_width // 2, 480),
+            ("Medios", screen_width // 2, 360),  # Agrega la opción "Medios" aquí
+            ("Entrenamiento", screen_width // 2, 420),
+            ("Personalizar Personaje", screen_width // 2, 480),
         ]
+
 
         y = 400
         for button_text, x_button, y_button in menu_buttons:
@@ -690,6 +788,8 @@ while running:
                                             break
                         elif button_text == "Ofertas de Traspaso":
                             mercado_de_traspaso(jugadores_disponibles[-1])
+                        elif button_text == "Medios":
+                            gestionar_medios()  
                         elif button_text == "Estilo de Vida":
                             gestionar_estilo_de_vida(jugadores_disponibles[-1])
                         elif button_text == "Simular Partido":
